@@ -9,8 +9,11 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/', async (req, res) => {
-    const users = await User.findAll()
-    res.json(users)
+    // const users = await User.findAll()
+    // res.json(users)
+    res.status(200).json({
+        message: 'This is the Users page'
+    })
 })
 
 module.exports = router
