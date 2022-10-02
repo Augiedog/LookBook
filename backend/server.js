@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
     })
 })
 
+// Controllers
 app.use('/users', require('./controllers/users'))
 
 // Listen for Connection
