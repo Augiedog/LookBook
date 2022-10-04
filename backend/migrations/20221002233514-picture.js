@@ -11,7 +11,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {type: Sequelize.STRING},
+      file_name: {type: Sequelize.STRING},
       pic_url: {type: Sequelize.STRING},
       description: {type: Sequelize.STRING},
       author_id: {type: Sequelize.INTEGER},

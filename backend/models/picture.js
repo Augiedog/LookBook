@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   class Picture extends Model {
 
     static associate({ User, Comment}) {
-        Picture.belongsTo(User, { as: 'author', foreignKey: 'user_id' })
-        // Picture.hasMany(Comment, { foreignKey: 'pictureId', as: 'comments' })
+        Picture.belongsTo(User, { as: 'author', foreignKey: 'author_id' })
+        Picture.hasMany(Comment, { foreignKey: 'pictureId', as: 'comments' })
       }
   };
 
@@ -17,10 +17,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    name: DataTypes.STRING,
+    fileName: DataTypes.STRING,
     picURL: DataTypes.STRING,
     description: DataTypes.STRING,
-    user_id: DataTypes.STRING
+    authorId: DataTypes.STRING
   }, {
     sequelize,
     underscored: true,

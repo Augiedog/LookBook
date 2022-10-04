@@ -1,12 +1,12 @@
 import React ,{useState} from 'react';
 import AWS from 'aws-sdk'
 
-const S3_BUCKET ='YOUR_BUCKET_NAME_HERE';
-const REGION ='YOUR_DESIRED_REGION_HERE';
+const S3_BUCKET ='oma-tree';
+const REGION ='US East (Ohio) us-east-2';
 
 
 AWS.config.update({
-    accessKeyId: 'YOUR_ACCESS_KEY_HERE',
+    accessKeyId: 'b7f00a46d4da6848891aa554241b1c7c614ce3d713aa8213b983e2f7cb3a5f04',
     secretAccessKey: 'YOUR_SECRET_ACCESS_KEY_HERE'
 })
 
@@ -44,9 +44,9 @@ const UpLoad = () => {
 
 
     return <div>
-        <div>Native SDK File Upload Progress is {progress}%</div>
+        <div>Click the button to find the file you wish to up load {progress}%</div>
         <input type="file" onChange={handleFileInput}/>
-        <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button>
+        <button onClick={() => uploadFile(selectedFile)}> Upload to Oma's Tree</button>
     </div>
 }
 
