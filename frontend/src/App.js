@@ -1,8 +1,8 @@
 import UpLoad from './component/UpLoad';
-import NavBar from './component/navbar';
+import NavBar from './component/home/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './component/home';
-import SlideShow from './component/carousel';
+import Home from './component/home/home';
+import SlideShow from './component/home/slideShow';
 
 
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 style={{ 'text-align': 'center' , 'color': 'pink' }}>Oma's Tree</h1>
+        <h1 style={{ 'text-align': 'center' , 'color': 'blue' }}>Oma's Tree</h1>
         <NavBar />
         <Home />
         <SlideShow />

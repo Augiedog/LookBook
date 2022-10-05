@@ -4,8 +4,13 @@ const db = require("../models")
 const { Picture } = db
 
 router.post('/', async (req, res) => {
-    const picture = await Picture.create(req.body)
+    try {
+        const picture = await Picture.create(req.body)
     res.json(picture)
+    } catch (error) {
+        console.log("here is the problem", error)
+    }
+    
 })
 
 router.get('/', async (req, res) => {
