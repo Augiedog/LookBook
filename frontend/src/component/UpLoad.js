@@ -1,13 +1,14 @@
 import React ,{useState} from 'react';
 import AWS from 'aws-sdk'
 
-const S3_BUCKET ='oma-tree';
-const REGION ='US East (Ohio) us-east-2';
+
+const S3_BUCKET ='oma-tree/picture';
+const REGION ='us-east-2';
 
 
 AWS.config.update({
-    accessKeyId: 'b7f00a46d4da6848891aa554241b1c7c614ce3d713aa8213b983e2f7cb3a5f04',
-    secretAccessKey: 'YOUR_SECRET_ACCESS_KEY_HERE'
+    accessKeyId: 'AKIAS7T74WOVTTYTKXXU',
+    secretAccessKey: 'Pzp/4GSdh+uG5H6U6la/UknKxYYh3fk17lUdWTPm'
 })
 
 const myBucket = new AWS.S3({

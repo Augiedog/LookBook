@@ -2,11 +2,11 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function SlideShow() {
   return (
-    <Carousel>
+    <Carousel style={{'width': "90%", 'align': "center"}}>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          src="https://lovinglifeathome.com/wp-content/uploads/2019/09/Grandkids.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -17,10 +17,9 @@ function SlideShow() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          src="https://www.araglegal.com/dam/jcr:dbbccb15-06ae-40bc-9e87-f46affe5a972/Grandparents%20as%20Caregivers%20Photo.jpg"
           alt="Second slide"
         />
-
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -29,10 +28,9 @@ function SlideShow() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          src="https://cdn.mos.cms.futurecdn.net/r3NryuQKaMBQmCHgfkgcA9.jpg"
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
