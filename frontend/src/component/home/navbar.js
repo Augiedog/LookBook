@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap'
 function NavBar() {
 
     return (
-        <Navbar bg="warning" variant="#b5ab3c" sticky='top' >
+        <Navbar bg="success" variant="#b5ab3c" sticky='top' >
             <Container>
                 {/* <Navbar.Brand href="#home" style={{ 'color': 'pink' }}>Oma's Tree</Navbar.Brand> */}
                 <Navbar.Toggle />
