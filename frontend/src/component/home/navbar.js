@@ -5,19 +5,19 @@ import { Button } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 
 function NavBar() {
-    
+
     return (
-        <Navbar bg="dark" variant="dark" sticky='top' >
+        <Navbar bg="warning" variant="#b5ab3c" sticky='top' >
             <Container>
                 {/* <Navbar.Brand href="#home" style={{ 'color': 'pink' }}>Oma's Tree</Navbar.Brand> */}
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#2">firstKid</Nav.Link>
-                        <Nav.Link href="#7">secondKid</Nav.Link>
-                        <Nav.Link href="#5">grandKidOne</Nav.Link>
-                        <Nav.Link href="#6">grandKidTwo</Nav.Link>
+                        <Nav.Link href="#2">firstChild</Nav.Link>
+                        <Nav.Link href="#7">secondChild</Nav.Link>
+                        <Nav.Link href="#5">grandChildOne</Nav.Link>
+                        <Nav.Link href="#6">grandChildTwo</Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
