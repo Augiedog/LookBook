@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import UpLoad from './component/UpLoad';
 import NavBar from './component/home/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 import Home from './component/home/home';
 import SlideShow from './component/home/slideShow';
 import Error404 from './component/Error404';

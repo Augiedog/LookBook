@@ -17,8 +17,8 @@ function NavBar() {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/pictures" >Slide Show</Nav.Link>
                         <Nav.Link href="/pictures/upload">Upload</Nav.Link>
-                        <Nav.Link href="/error">grandKidOne</Nav.Link>
-                        <Nav.Link href="/error">grandKidTwo</Nav.Link>
+                        <Nav.Link href="/error">Print</Nav.Link>
+                        <Nav.Link href="/error">Log In</Nav.Link>
                     </Nav>
                     <Outlet />
                     

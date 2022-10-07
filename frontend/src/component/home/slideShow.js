@@ -19,26 +19,13 @@ function SlideShow() {
         setError(error);
       }
     })
-    // fetch("192.168.0.29:5000/pictures")
-    //   .then(res => res.json())
-    //   .then(
-    //     (result) => {
-    //       console.log("from api", result)
-    //       setIsLoaded(true);
-    //       setPictures(result);
-    //     }
-    //   ).catch(
-    //     (error) => {
-    //       setIsLoaded(false);
-    //       setError(error);
-    //     })
-  }, [])
+   }, [isLoaded])
 
   console.log("API call", pictures)
 
   let pictureCarousel = pictures.map((picture) => {
     return (
-      <Carousel.Item>
+      <Carousel.Item key={picture.fileName}>
         <img
           className="d-block w-100"
           src={picture.picUrl}
@@ -59,7 +46,7 @@ if (error) {
 } else {
   return (
     <Container>
-      <Carousel style={{ 'width': "90%", 'align': "center" }}>
+      <Carousel>
         {pictureCarousel}
       </Carousel>
     </Container>
