@@ -1,3 +1,4 @@
+import { BrowserRouter, Outlet} from "react-router-dom"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
@@ -13,21 +14,14 @@ function NavBar() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#2">firstKid</Nav.Link>
-                        <Nav.Link href="#7">secondKid</Nav.Link>
-                        <Nav.Link href="#5">grandKidOne</Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/pictures" >SlideShow</Nav.Link>
+                        <Nav.Link href="/pictures/upload">Up Load</Nav.Link>
+                        <Nav.Link href="/error">grandKidOne</Nav.Link>
                         <Nav.Link href="#6">grandKidTwo</Nav.Link>
                     </Nav>
-                    <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
+                    <Outlet />
+                    
                     <Navbar.Text>
                         {/* Signed in as: <a href="/">{location.state && location.state.user.username}</a> */}
                     </Navbar.Text>
