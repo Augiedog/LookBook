@@ -34,12 +34,10 @@ function SlideShow() {
     //     })
   }, [])
 
-  // console.log("API call", pictures)
+  console.log("API call", pictures)
 
   let pictureCarousel = pictures.map((picture) => {
-    console.log("are you running", picture)
     return (
-
       <Carousel.Item>
         <img
           className="d-block w-100"

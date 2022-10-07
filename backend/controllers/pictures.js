@@ -8,10 +8,10 @@ router.post('/', async (req, res) => {
         req.body.pic = 'FileName'
     }
     if (!req.body.picUrl) {
-        req.body.city = 'http://placekitten.com/400/400'
+        req.body.picUrl = 'http://placekitten.com/400/400'
     }
     if (!req.body.description) {
-        req.body.state = 'description goes here'
+        req.body.description = 'description goes here'
     }
     if (!req.body.authorId) {
         req.body.authorId = "1"
