@@ -72,7 +72,7 @@ const UpLoad = () => {
                     <label htmlFor="name">Picture Name</label>
                     <input
                         required
-                        value={name}
+                        value={pictures.fileName}
                         onChange={e => setPicture({ ...picture, fileName: e.target.value })}
                         className="form-control"
                         id="name"

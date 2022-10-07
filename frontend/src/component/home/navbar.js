@@ -1,8 +1,8 @@
 import { BrowserRouter, Outlet} from "react-router-dom"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Form from 'react-bootstrap/Form'
-import { Button } from 'react-bootstrap'
+// import Form from 'react-bootstrap/Form'
+// import { Button } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 
 function NavBar() {
@@ -15,10 +15,10 @@ function NavBar() {
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/pictures" >SlideShow</Nav.Link>
-                        <Nav.Link href="/pictures/upload">Up Load</Nav.Link>
+                        <Nav.Link href="/pictures" >Slide Show</Nav.Link>
+                        <Nav.Link href="/pictures/upload">Upload</Nav.Link>
                         <Nav.Link href="/error">grandKidOne</Nav.Link>
-                        <Nav.Link href="#6">grandKidTwo</Nav.Link>
+                        <Nav.Link href="/error">grandKidTwo</Nav.Link>
                     </Nav>
                     <Outlet />
                     

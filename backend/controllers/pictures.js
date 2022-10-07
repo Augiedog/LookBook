@@ -22,7 +22,9 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     const pictures = await Picture.findAll()
+    console.log("pictures from backend", pictures)
     res.json(pictures)
+    
 })
 
 module.exports = router
