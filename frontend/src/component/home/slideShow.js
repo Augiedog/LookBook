@@ -9,7 +9,7 @@ function SlideShow() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:5000/pictures").then(async res => {
+    fetch("http://192.168.0.29:5000/pictures").then(async res => {
       try {
         const data = await res.json()
         setPictures(data)

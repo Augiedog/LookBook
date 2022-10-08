@@ -6,6 +6,7 @@ import './App.css'
 import Home from './component/home/home';
 import SlideShow from './component/home/slideShow';
 import Error404 from './component/Error404';
+import LoginForm from './component/logIn';
 
 
 
@@ -20,7 +21,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/pictures/upload" element={<UpLoad />} />
-              {/* <Route path="/login" element={<LoginForm />} /> */}
+              <Route path="/login" element={<LoginForm />} />
               <Route path="/pictures" element={<SlideShow />} />
               <Route path="/error" element={<Error404 />} />
             </Routes>
