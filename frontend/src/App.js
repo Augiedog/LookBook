@@ -18,7 +18,6 @@ function App() {
       <header className="App-header">
         <h1 style={{ 'textAlign': 'center', 'color': 'blue' }}>Oma's Tree</h1>
       </header>
-
         <CurrentUserProvider>
           <BrowserRouter>
             <NavBar />
@@ -32,7 +31,6 @@ function App() {
             </Routes>
           </BrowserRouter>
         </CurrentUserProvider>
-
     </div>
   )
 

@@ -33,9 +33,7 @@ function LoginForm() {
        } else {
         setErrorMessage(data.message)
        }
-
-       console.log(data, "loginform")
-
+       console.log("loginform", data)
     }
 
     return (
@@ -76,6 +74,7 @@ function LoginForm() {
                         />
                     </div>
                 </div>
+                <br />
                 <input className="btn btn-primary" type="submit" value="Login" />
             </form>
         </main>
