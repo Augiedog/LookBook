@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 // Controllers
 app.use('/users', require('./controllers/users'))
 app.use('/pictures', require('./controllers/pictures'))
+app.use('/authentication', require('./middleware/auth'))
 
 // Listen for Connection
 app.listen(process.env.PORT, () => {
