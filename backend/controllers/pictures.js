@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
         req.body.picUrl = 'http://placekitten.com/400/400'
     }
     if (!req.body.description) {
-        req.body.description = 'description goes here'
+        req.body.description = 'This the Caption'
     }
     if (!req.body.authorId) {
         req.body.authorId = "1"

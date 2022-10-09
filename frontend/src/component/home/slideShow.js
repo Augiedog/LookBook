@@ -9,7 +9,7 @@ function SlideShow() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:5000/pictures").then(async res => {
+    fetch(process.env.REACT_APP_API + `/pictures`).then(async res => {
       try {
         const data = await res.json()
         setPictures(data)
@@ -19,9 +19,9 @@ function SlideShow() {
         setError(error);
       }
     })
-   }, [isLoaded])
+  }, [isLoaded])
 
-  console.log("API call", pictures)
+  // console.log("API call", pictures)
 
   let pictureCarousel = pictures.map((picture) => {
     return (
@@ -36,21 +36,21 @@ function SlideShow() {
         </Carousel.Caption>
       </Carousel.Item>
     )
-})
+  })
 
-if (error) {
-  return <Error404 error={error.message} />
-} else if (!isLoaded) {
-  return <div className='App'><h1>Loading</h1></div>
-} else {
-  return (
-    <Container>
-      <Carousel>
-        {pictureCarousel}
-      </Carousel>
-    </Container>
-  )
-}
+  if (error) {
+    return <Error404 error={error.message} />
+  } else if (!isLoaded) {
+    return <div className='App'><h1>Loading</h1></div>
+  } else {
+    return (
+      <Container>
+        <Carousel>
+          {pictureCarousel}
+        </Carousel>
+      </Container>
+    )
+  }
 }
 
 export default SlideShow;

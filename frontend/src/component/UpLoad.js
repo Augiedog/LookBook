@@ -5,8 +5,8 @@ import { Container } from 'react-bootstrap'
 
 
 
-const S3_BUCKET = 'oma-tree/picture';
-const REGION = 'us-east-2';
+const S3_BUCKET = process.env.REACT_APP_S3_BUCKET;
+const REGION = process.env.REACT_APP_REGION;
 
 
 AWS.config.update({
@@ -33,14 +33,14 @@ const UpLoad = () => {
     const handleFileInput = (e) => {
         setSelectedFile(e.target.files[0])
         console.log("File Name to upLoad--", e.target.files[0].name)
-        setPicture({ ...picture, fileName: {e.target.files[0].name} })
+        setPicture({ ...picture, fileName: e.target.files[0].name })
         setPicture({ ...picture, authorId: 2 })
         // setPicture({ ...picture, picUrl: e.target.value })
     }
     async function handleSubmit(e) {
         e.preventDefault()
 
-        await fetch(`http://192.168.0.29:5000/pictures`, {
+        await fetch(process.env.REACT_APP_API + `/pictures`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const UpLoad = () => {
             body: JSON.stringify(picture)
         })
 
-        history.push('/pictures')
+        history(`/pictures`)
     }
     const uploadFile = (file) => {
         const params = {
