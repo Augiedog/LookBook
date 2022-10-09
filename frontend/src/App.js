@@ -10,7 +10,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 style={{ 'text-align': 'center', 'border': '1px solid black', 'outline-stlye': 'solid', 'outline-color': 'white', 'color': 'blue' }}>Oma's Tree</h1>
+
+        {/* <h1 style={{ 'text-align': 'center', 'color': 'blue' }}>Oma's Tree</h1> */}
         <NavBar />
         <Home />
         <SlideShow />
