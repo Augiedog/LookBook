@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import AWS from 'aws-sdk'
 import { Container } from 'react-bootstrap'
+import { CurrentUser } from '../contexts/currentUser'
 
 
 
@@ -21,6 +22,7 @@ const myBucket = new AWS.S3({
 
 const UpLoad = () => {
     const history = useNavigate()
+    const { currentUser } = useContext(CurrentUser)
     const [picture, setPicture] = useState({
         fileName: '',
         picUrl: '',
@@ -28,15 +30,22 @@ const UpLoad = () => {
         authorId: ''
     })
     const [progress, setProgress] = useState(0);
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [selectedFile, setSelectedFile] = useState({name: ''});
 
     const handleFileInput = (e) => {
         setSelectedFile(e.target.files[0])
-        console.log("File Name to upLoad--", e.target.files[0].name)
+        console.log("File Name to upLoad--:", e.target.files[0].name)
         setPicture({ ...picture, fileName: e.target.files[0].name })
-        setPicture({ ...picture, authorId: 2 })
+        setPicture({ ...picture, authorId: currentUser.userId })
         // setPicture({ ...picture, picUrl: e.target.value })
     }
+
+    // useEffect(() => {
+    //     console.log("File Name to upLoad--:", selectedFile.name)
+    //     setPicture({ ...picture, fileName: selectedFile.name })
+    //     setPicture({ ...picture, authorId: currentUser.userId })
+    // }, [selectedFile])
+
     async function handleSubmit(e) {
         e.preventDefault()
 

@@ -15,7 +15,7 @@ function NavBar() {
     let loginActions = (
         <>
             <li style={{ float: 'right' }}>
-                <a href="#" onClick={() => history("/sign-up")}>
+                <a href="#" onClick={() => history("/signUp")}>
                     Sign Up
                 </a>
             </li>
@@ -30,7 +30,7 @@ function NavBar() {
     if (currentUser) {
         loginActions = (
             <Navbar.Text>
-                Signed in as: <a href="/">{currentUser.firstName + ' ' + currentUser.lastName}</a>
+                Signed in as: <a href="/">{currentUser.firstName} {currentUser.lastName}</a>
             </Navbar.Text>
         )
     }
@@ -42,10 +42,10 @@ function NavBar() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/pictures" >Slide Show</Nav.Link>
-                        <Nav.Link href="/pictures/upload">Upload</Nav.Link>
-                        <Nav.Link href="/error">Print</Nav.Link>
+                        <Nav.Link href="#" onClick={() => history("/")}>Home</Nav.Link>
+                        <Nav.Link href="#" onClick={() => history("/pictures")}>Slide Show</Nav.Link>
+                        <Nav.Link href="#" onClick={() => history("/pictures/upload")}>Upload</Nav.Link>
+                        <Nav.Link href="#" onClick={() => history("/error")}>Print</Nav.Link>
                         {/* <Nav.Link href="/login">Log In</Nav.Link>
                         <Nav.Link href="/signUp">Sign Up</Nav.Link> */}
                     </Nav>
