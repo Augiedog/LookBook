@@ -4,7 +4,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     
     //  Add altering commands here.    
-    await queryInterface.createTable('picture', {
+    await queryInterface.createTable('pictures', {
       picture_id: {
         allowNull: false,
         autoIncrement: true,
@@ -29,6 +29,6 @@ module.exports = {
   async down (queryInterface, Sequelize) {
   
     // Add reverting commands here.
-    await queryInterface.dropTable('picture');
+    await queryInterface.dropTable('pictures');
   }
 };
