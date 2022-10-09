@@ -23,6 +23,7 @@ const myBucket = new AWS.S3({
 const UpLoad = () => {
     const history = useNavigate()
     const { currentUser } = useContext(CurrentUser)
+
     const [picture, setPicture] = useState({
         fileName: '',
         picUrl: '',
@@ -30,21 +31,32 @@ const UpLoad = () => {
         authorId: ''
     })
     const [progress, setProgress] = useState(0);
-    const [selectedFile, setSelectedFile] = useState({name: ''});
+    const [selectedFile, setSelectedFile] = useState({ name: '' });
+
+
 
     const handleFileInput = (e) => {
+        const nameFile = e.target.files[0].name
+        const spacedUrl = 'https://oma-tree.s3.us-east-2.amazonaws.com/picture/' + nameFile.replaceAll(' ', '+')
         setSelectedFile(e.target.files[0])
-        console.log("File Name to upLoad--:", e.target.files[0].name)
-        setPicture({ ...picture, fileName: e.target.files[0].name })
-        setPicture({ ...picture, authorId: currentUser.userId })
-        // setPicture({ ...picture, picUrl: e.target.value })
+        setPicture({
+            ...picture,
+            fileName: nameFile,
+            picUrl: spacedUrl,
+            authorId: currentUser.userId
+        })
     }
 
     // useEffect(() => {
+    //     const spacedUrl = 'https://oma-tree.s3.us-east-2.amazonaws.com/picture/' + selectedFile.name.replaceAll(' ', '+')
+    //     console.log("spacedUrl in use effect", spacedUrl)
     //     console.log("File Name to upLoad--:", selectedFile.name)
-    //     setPicture({ ...picture, fileName: selectedFile.name })
+    //     setPicture({ ...picture, fileName: nameFile })
     //     setPicture({ ...picture, authorId: currentUser.userId })
+    //     setPicture({ ...picture, picUrl: spacedUrl })
     // }, [selectedFile])
+
+
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -77,15 +89,15 @@ const UpLoad = () => {
     // console.log('recbeccaILoveYou-->C===3', selectedFile.name)
     console.log("will go to bucket", selectedFile)
     console.log("will go to table", picture)
-    
+
     return (
         <Container>
             <h1>Add a New Picture</h1>
-            <form onSubmit={handleSubmit}>             
+            <form onSubmit={handleSubmit}>
                 {/* <input className="btn btn-primary" type="submit" value="Add Place" /> */}
                 <div><p>Click the button to find the file you wish to upload</p> {progress}%</div>
-                <input type="file" onChange={handleFileInput} />              
-                
+                <input type="file" onChange={handleFileInput} />
+
                 <div className="form-group">
                     <label htmlFor="description">Caption</label>
                     <input
@@ -100,7 +112,7 @@ const UpLoad = () => {
                 <br />
                 <button onClick={() => uploadFile(selectedFile)} className="btn btn-primary" type="submit"> Upload to Oma's Tree</button>
                 <br />
-                
+
                 {/* <div className="form-group">
                     <label htmlFor="name">fileName here for testing</label>
                     <input

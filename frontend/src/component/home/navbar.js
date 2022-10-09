@@ -14,16 +14,10 @@ function NavBar() {
 
     let loginActions = (
         <>
-            <li style={{ float: 'right' }}>
-                <a href="#" onClick={() => history("/signUp")}>
-                    Sign Up
-                </a>
-            </li>
-            <li style={{ float: 'right' }}>
-                <a href="#" onClick={() => history("/login")}>
-                    Login
-                </a>
-            </li>
+            <Navbar.Text>
+                <Nav.Link href="/signUp" onClick={() => history("/")}>Sign up</Nav.Link>
+                <Nav.Link href="/login" onClick={() => history("/")}>Login</Nav.Link>
+            </Navbar.Text>
         </>
     )
 
