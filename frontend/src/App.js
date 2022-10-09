@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 style={{ 'textAlign': 'center', 'color': 'blue' }}>Oma's Tree</h1>
+        <img src='../images/omasTreePinkLogoCropped.png' alt='logo' />
       </header>
         <CurrentUserProvider>
           <BrowserRouter>

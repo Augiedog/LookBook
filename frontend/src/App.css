@@ -2,6 +2,7 @@
     text-align: center;
   }
   body {
+    background-image: url('../public/images/bg8.jpeg');
     background-color: #f777c6;
   }
   h1 {
