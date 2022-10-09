@@ -33,7 +33,7 @@ const UpLoad = () => {
     const handleFileInput = (e) => {
         setSelectedFile(e.target.files[0])
         console.log("File Name to upLoad--", e.target.files[0].name)
-        setPicture({ ...picture, fileName: `e.target.files[0].name` })
+        setPicture({ ...picture, fileName: {e.target.files[0].name} })
         setPicture({ ...picture, authorId: 2 })
         // setPicture({ ...picture, picUrl: e.target.value })
     }
@@ -65,7 +65,7 @@ const UpLoad = () => {
                 if (err) console.log(err)
             })
     }
-
+    // console.log('recbeccaILoveYou-->C===3', selectedFile.name)
     console.log("will go to bucket", selectedFile)
     console.log("will go to table", picture)
     

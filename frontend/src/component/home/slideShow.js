@@ -9,7 +9,7 @@ function SlideShow() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    fetch("http://192.168.0.29:5000/pictures").then(async res => {
+    fetch("http://localhost:5000/pictures").then(async res => {
       try {
         const data = await res.json()
         setPictures(data)
@@ -32,8 +32,7 @@ function SlideShow() {
           alt={picture.fileName}
         />
         <Carousel.Caption>
-          <h3>{picture.fileName}</h3>
-          <p>{picture.description}</p>
+          <h3>{picture.description}</h3>
         </Carousel.Caption>
       </Carousel.Item>
     )
