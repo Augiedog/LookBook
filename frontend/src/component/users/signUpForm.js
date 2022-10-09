@@ -80,6 +80,7 @@ function SignUpForm() {
 						/>
 					</div>
 				</div>
+				<br />
 				<input className="btn btn-primary" type="submit" value="Sign Up" />
 			</form>
 		</main>

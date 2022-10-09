@@ -4,11 +4,8 @@ import AWS from 'aws-sdk'
 import { Container } from 'react-bootstrap'
 import { CurrentUser } from '../contexts/currentUser'
 
-
-
 const S3_BUCKET = process.env.REACT_APP_S3_BUCKET;
 const REGION = process.env.REACT_APP_REGION;
-
 
 AWS.config.update({
     accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
@@ -33,8 +30,6 @@ const UpLoad = () => {
     const [progress, setProgress] = useState(0);
     const [selectedFile, setSelectedFile] = useState({ name: '' });
 
-
-
     const handleFileInput = (e) => {
         const nameFile = e.target.files[0].name
         const spacedUrl = 'https://oma-tree.s3.us-east-2.amazonaws.com/picture/' + nameFile.replaceAll(' ', '+')
@@ -47,17 +42,6 @@ const UpLoad = () => {
         })
     }
 
-    // useEffect(() => {
-    //     const spacedUrl = 'https://oma-tree.s3.us-east-2.amazonaws.com/picture/' + selectedFile.name.replaceAll(' ', '+')
-    //     console.log("spacedUrl in use effect", spacedUrl)
-    //     console.log("File Name to upLoad--:", selectedFile.name)
-    //     setPicture({ ...picture, fileName: nameFile })
-    //     setPicture({ ...picture, authorId: currentUser.userId })
-    //     setPicture({ ...picture, picUrl: spacedUrl })
-    // }, [selectedFile])
-
-
-
     async function handleSubmit(e) {
         e.preventDefault()
 
@@ -68,7 +52,6 @@ const UpLoad = () => {
             },
             body: JSON.stringify(picture)
         })
-
         history(`/pictures`)
     }
     const uploadFile = (file) => {
@@ -89,7 +72,7 @@ const UpLoad = () => {
     // console.log('recbeccaILoveYou-->C===3', selectedFile.name)
     console.log("will go to bucket", selectedFile)
     console.log("will go to table", picture)
-
+   
     return (
         <Container>
             <h1>Add a New Picture</h1>
@@ -112,40 +95,6 @@ const UpLoad = () => {
                 <br />
                 <button onClick={() => uploadFile(selectedFile)} className="btn btn-primary" type="submit"> Upload to Oma's Tree</button>
                 <br />
-
-                {/* <div className="form-group">
-                    <label htmlFor="name">fileName here for testing</label>
-                    <input
-                        required
-                        value={picture.fileName}
-                        onChange={e => setPicture({ ...picture, fileName: e.target.value })}
-                        className="form-control"
-                        id="name"
-                        name="name"
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="authorId">authorId here for testing</label>
-                    <input
-                        value={picture.authorId}
-                        onChange={e => setPicture({ ...picture, authorId: e.target.value })}
-                        className="form-control"
-                        id="authorId"
-                        name="authorId"
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="city">picUrl here for testing</label>
-                    <input
-                        value={picture.picUrl}
-                        onChange={e => setPicture({ ...picture, picUrl: e.target.value })}
-                        className="form-control"
-                        id="picUrl"
-                        name="picUrl"
-                    />
-                </div> */}
-
             </form>
         </Container>
     )

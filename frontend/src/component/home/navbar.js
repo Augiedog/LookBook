@@ -12,6 +12,13 @@ function NavBar() {
     const history = useNavigate()
     const { currentUser } = useContext(CurrentUser)
 
+    let logedinAction = (
+        <>
+            <Nav.Link href="/login">Log In</Nav.Link>
+            <Nav.Link href="/signUp">Sign Up</Nav.Link>
+        </>
+    )
+
     let loginActions = (
         <>
             <Navbar.Text>
@@ -22,6 +29,13 @@ function NavBar() {
     )
 
     if (currentUser) {
+        logedinAction = (
+            <>
+                <Nav.Link href="#" onClick={() => history("/pictures")}>Slide Show</Nav.Link>
+                <Nav.Link href="#" onClick={() => history("/pictures/upload")}>Upload</Nav.Link>
+                <Nav.Link href="#" onClick={() => history("/error")}>Print</Nav.Link>
+            </>
+        )
         loginActions = (
             <Navbar.Text>
                 Signed in as: <a href="/">{currentUser.firstName} {currentUser.lastName}</a>
@@ -37,11 +51,7 @@ function NavBar() {
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="me-auto">
                         <Nav.Link href="#" onClick={() => history("/")}>Home</Nav.Link>
-                        <Nav.Link href="#" onClick={() => history("/pictures")}>Slide Show</Nav.Link>
-                        <Nav.Link href="#" onClick={() => history("/pictures/upload")}>Upload</Nav.Link>
-                        <Nav.Link href="#" onClick={() => history("/error")}>Print</Nav.Link>
-                        {/* <Nav.Link href="/login">Log In</Nav.Link>
-                        <Nav.Link href="/signUp">Sign Up</Nav.Link> */}
+                        {logedinAction}
                     </Nav>
                     {loginActions}
                     <Outlet />
