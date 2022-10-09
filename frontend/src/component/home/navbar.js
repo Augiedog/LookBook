@@ -44,7 +44,7 @@ function NavBar() {
     }
 
     return (
-        <Navbar bg="info" sticky='top' >
+        <Navbar className="navBar" sticky='top' >
             <Container>
                 {/* <Navbar.Brand href="#home" style={{ 'color': 'pink' }}>Oma's Tree</Navbar.Brand> */}
                 <Navbar.Toggle />
