@@ -21,7 +21,7 @@ function SlideShow() {
     })
   }, [isLoaded])
 
-  // console.log("API call", pictures)
+  console.log("API call for pictures", pictures)
 
   let pictureCarousel = pictures.map((picture) => {
     return (

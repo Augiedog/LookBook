@@ -1,12 +1,10 @@
-import { BrowserRouter, Outlet } from "react-router-dom"
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import { useNavigate } from "react-router-dom"
-// import Form from 'react-bootstrap/Form'
-// import { Button } from 'react-bootstrap'
-import { Container } from 'react-bootstrap'
-import { CurrentUser } from '../../contexts/currentUser'
-import { useContext } from "react"
+import { Outlet } from "react-router-dom";
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import { useNavigate } from "react-router-dom";
+import { Container } from 'react-bootstrap';
+import { CurrentUser } from '../../contexts/currentUser';
+import { useContext } from "react";
 
 function NavBar() {
     const history = useNavigate()
@@ -31,6 +29,7 @@ function NavBar() {
     if (currentUser) {
         logedinAction = (
             <>
+                <Nav.Link href="#" onClick={() => history("/gallery")}>Gallery</Nav.Link>
                 <Nav.Link href="#" onClick={() => history("/pictures")}>Slide Show</Nav.Link>
                 <Nav.Link href="#" onClick={() => history("/pictures/upload")}>Upload</Nav.Link>
                 <Nav.Link href="#" onClick={() => history("/error")}>Print</Nav.Link>

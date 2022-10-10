@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
     })
     if (!user || !await bcrypt.compare(req.body.password, user.passwordDigest)) {
         res.status(404).json({
-            message: `This Oma Could not Be found`
+            message: `This Oma could not be found; please check your Email and password combination`
         })
     } else {
         res.json({ user })

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import UpLoad from './component/UpLoad';
+import UpLoad from './component/home/UpLoad';
 import NavBar from './component/home/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -9,6 +9,7 @@ import Error404 from './component/Error404';
 import LoginForm from './component/users/logIn';
 import SignUpForm from './component/users/signUpForm';
 import CurrentUserProvider from './contexts/currentUser';
+import Gallery from './component/home/gallery';
 
 
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/pictures/upload" element={<UpLoad />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/signUp" element={<SignUpForm />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="/pictures" element={<SlideShow />} />
               <Route path="/error" element={<Error404 />} />
             </Routes>

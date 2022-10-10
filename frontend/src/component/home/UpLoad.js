@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import AWS from 'aws-sdk'
 import { Container } from 'react-bootstrap'
-import { CurrentUser } from '../contexts/currentUser'
+import { CurrentUser } from '../../contexts/currentUser'
 
 const S3_BUCKET = process.env.REACT_APP_S3_BUCKET;
 const REGION = process.env.REACT_APP_REGION;
@@ -31,12 +31,12 @@ const UpLoad = () => {
     const [selectedFile, setSelectedFile] = useState({ name: '' });
 
     const handleFileInput = (e) => {
-        const nameFile = e.target.files[0].name
-        const spacedUrl = 'https://oma-tree.s3.us-east-2.amazonaws.com/picture/' + nameFile.replaceAll(' ', '+')
-        setSelectedFile(e.target.files[0])
+        const selectedFile = e.target.files[0]
+        const spacedUrl = 'https://oma-tree.s3.us-east-2.amazonaws.com/picture/' + selectedFile.name.replaceAll(' ', '+')
+        setSelectedFile(selectedFile)
         setPicture({
             ...picture,
-            fileName: nameFile,
+            fileName: selectedFile.name,
             picUrl: spacedUrl,
             authorId: currentUser.userId
         })
@@ -77,7 +77,7 @@ const UpLoad = () => {
         <Container>
             <h1>Add a New Picture</h1>
             <form onSubmit={handleSubmit}>
-                {/* <input className="btn btn-primary" type="submit" value="Add Place" /> */}
+                {/* <input className="btn btn-primary" type="submit" value="Add " /> */}
                 <div><p>Click the button to find the file you wish to upload</p> {progress}%</div>
                 <input type="file" onChange={handleFileInput} />
 
