@@ -1,0 +1,9 @@
+{
+    "name": "lookbook",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "start:frontend": "npm --prefix  frontend run start",
+        "start:backend": "npm --prefix backend run start" 
+    }
+}
