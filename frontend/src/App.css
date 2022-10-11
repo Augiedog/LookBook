@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url('../public/images/bg8.jpeg');
+  background-image: url('./images/bg8.jpeg');
   background-color: #f777c6;
 }
 

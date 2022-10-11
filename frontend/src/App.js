@@ -3,6 +3,7 @@ import UpLoad from './component/home/upLoad';
 import NavBar from './component/home/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import logo from './images/omasTreePinkLogoCropped.png';
 import Home from './component/home/home';
 import SlideShow from './component/home/slideShow';
 import Error404 from './component/Error404';
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src='../images/omasTreePinkLogoCropped.png' alt='logo' />
+        <img src={logo} alt='logo' />
       </header>
         <CurrentUserProvider>
           <BrowserRouter>
