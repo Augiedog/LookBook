@@ -5,7 +5,7 @@ import Picture from './picture';
 
 function Gallery() {
     const [pictures, setPictures] = useState([])
-    
+
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -24,10 +24,9 @@ function Gallery() {
 
     console.log("API call for pictures", pictures)
 
-let picture = pictures.map((picture) => {
-    return (<Picture key={picture.fileName} picture={picture} />)
-})
-
+    let picture = pictures.map((picture) => {
+        return (<Picture key={picture.fileName} picture={picture} />)
+    })
 
     if (error) {
         return <Error404 error={error.message} />
@@ -42,10 +41,4 @@ let picture = pictures.map((picture) => {
     }
 }
 
-
 export default Gallery;
-
-// {pictures.map((picture, key) => {
-//     <Picture key="key" picture="{picture}" />
-//     {console.log("this is each picture", picture.fileName)}
-// })}
