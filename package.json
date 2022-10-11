@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "license": "MIT",
     "scripts": {
-        "build:frontend": "npm --prefix  frontend run build",
-        "build:backend": "npm --prefix backend run build" 
+        "frontend": "npm --prefix frontend run start",
+        "backend": "npm --prefix backend run start",
+        "pack:front": "npm --prefix frontend run build" 
     }
 }
