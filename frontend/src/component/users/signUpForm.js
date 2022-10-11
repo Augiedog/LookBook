@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"
 
 function SignUpForm() {
@@ -27,7 +28,7 @@ function SignUpForm() {
 	}
 
 	return (
-		<main>
+		<Container>
 			<h1>Sign Up</h1>
 			<form onSubmit={handleSubmit}>
 				<div className="row">
@@ -83,7 +84,7 @@ function SignUpForm() {
 				<br />
 				<input className="btn btn-primary" type="submit" value="Sign Up" />
 			</form>
-		</main>
+		</Container>
 	)
 }
 

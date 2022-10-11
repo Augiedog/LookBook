@@ -1,4 +1,5 @@
 import { useContext, useState } from "react"
+import { Container } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import { CurrentUser } from "../../contexts/currentUser"
 
@@ -37,7 +38,7 @@ function LoginForm() {
     }
 
     return (
-        <main>
+        <Container>
             <h1>Login</h1>
             {errorMessage !== null
                 ? (
@@ -77,7 +78,7 @@ function LoginForm() {
                 <br />
                 <input className="btn btn-primary" type="submit" value="Login" />
             </form>
-        </main>
+        </Container>
     )
 }
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Error404 from '../Error404';
 import Picture from './picture';
 
@@ -25,7 +25,7 @@ function Gallery() {
     console.log("API call for pictures", pictures)
 
 let picture = pictures.map((picture) => {
-    return (<><Picture photo={picture} />{console.log("can i have this", picture)}</>)
+    return (<Picture key={picture.fileName} picture={picture} />)
 })
 
 
@@ -35,7 +35,7 @@ let picture = pictures.map((picture) => {
         return <div className='App'><h1>Loading</h1></div>
     } else {
         return (
-            <Container>
+            <Container className='Gallery'>
                 {picture}
             </Container>
         )

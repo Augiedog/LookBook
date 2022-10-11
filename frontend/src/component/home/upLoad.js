@@ -69,10 +69,7 @@ const UpLoad = () => {
                 if (err) console.log(err)
             })
     }
-    // console.log('recbeccaILoveYou-->C===3', selectedFile.name)
-    console.log("will go to bucket", selectedFile)
-    console.log("will go to table", picture)
-   
+  
     return (
         <Container>
             <h1>Add a New Picture</h1>
