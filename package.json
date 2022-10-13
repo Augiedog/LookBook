@@ -6,6 +6,6 @@
         "frontend": "npm --prefix frontend run start",
         "backend": "npm --prefix backend run start",
         "pack:front": "npm --prefix frontend run build",
-        "start":  "npm ==prefix backend run build"
+        "build":  "npm --prefix backend run build"
     }
 }
