@@ -33,4 +33,5 @@ app.use('/authentication', require('./middleware/auth'))
 app.listen(process.env.PORT, () => {
     console.log(`Listening on ${process.env.PORT}`)
 })
+// This is for operation on the server
 // app.exports.handler = serverless(app)
