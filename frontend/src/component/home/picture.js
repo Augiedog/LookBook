@@ -28,8 +28,10 @@ function Picture({ picture }) {
                     <p><b>Posted By:</b> {picture.authorId}</p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                    <Button variant="primary" onClick={handleClose}>Save Changes</Button>
+                    <Button variant="warning" onClick={handleClose}>Edit</Button>
+                    <Button variant="secondary" onClick={handleClose}>Share</Button>
+                    <Button variant="info" onClick={handleClose}>Print</Button>
+                    <Button variant="success" onClick={handleClose}>  Ok  </Button>
                 </Modal.Footer>
             </Modal>
         </>

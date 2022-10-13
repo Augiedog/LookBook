@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const serverless = require('serverless-http')
 const bodyParser = require('body-parser')
 const { Sequelize } = require('sequelize')
 const cors = require('cors')
@@ -32,3 +33,4 @@ app.use('/authentication', require('./middleware/auth'))
 app.listen(process.env.PORT, () => {
     console.log(`Listening on ${process.env.PORT}`)
 })
+// app.exports.handler = serverless(app)
