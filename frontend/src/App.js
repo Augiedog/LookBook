@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import UpLoad from './component/home/upLoad';
 import NavBar from './component/home/navbar';
+import { Routes, Route } from 'react-router-dom';
+import UpLoad from './component/home/upLoad';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import logo from './images/omasTreePinkLogoCropped.png';
@@ -12,8 +12,6 @@ import SignUpForm from './component/users/signUpForm';
 import CurrentUserProvider from './contexts/currentUser';
 import Gallery from './component/home/gallery';
 
-
-
 function App() {
   return (
     <div className="App">
@@ -21,7 +19,6 @@ function App() {
         <img src={logo} alt='logo' />
       </header>
         <CurrentUserProvider>
-          <BrowserRouter>
             <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -32,7 +29,6 @@ function App() {
               <Route path="/pictures" element={<SlideShow />} />
               <Route path="/error" element={<Error404 />} />
             </Routes>
-          </BrowserRouter>
         </CurrentUserProvider>
     </div>
   )

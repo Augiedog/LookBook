@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { useNavigate } from "react-router-dom";
@@ -10,18 +10,24 @@ function NavBar() {
     const history = useNavigate()
     const { currentUser } = useContext(CurrentUser)
 
+//     <nav>
+//     <ul>
+//       <li><Link to="/login">Log In</Link></li>
+//     </ul>
+//   </nav>
+
     let logedinAction = (
         <>
-            <Nav.Link href="/login">Log In</Nav.Link>
-            <Nav.Link href="/signUp">Sign Up</Nav.Link>
+            <Nav.Link><Link to="/login">Log In</Link></Nav.Link>
+            <Nav.Link><Link to="/signUp">Sign Up</Link></Nav.Link>
         </>
     )
 
     let loginActions = (
         <>
             <Navbar.Text>
-                <Nav.Link href="/signUp" onClick={() => history("/")}>Sign up</Nav.Link>
-                <Nav.Link href="/login" onClick={() => history("/")}>Login</Nav.Link>
+                <Nav.Link><Link to="/signUp">Sign up</Link></Nav.Link>
+                <Nav.Link><Link to="/login">Login</Link></Nav.Link>
             </Navbar.Text>
         </>
     )
@@ -29,10 +35,10 @@ function NavBar() {
     if (currentUser) {
         logedinAction = (
             <>
-                <Nav.Link href="#" onClick={() => history("/gallery")}>Gallery</Nav.Link>
-                <Nav.Link href="#" onClick={() => history("/pictures")}>Slide Show</Nav.Link>
-                <Nav.Link href="#" onClick={() => history("/pictures/upload")}>Upload</Nav.Link>
-                <Nav.Link href="#" onClick={() => history("/error")}>Print</Nav.Link>
+                <Nav.Link><Link to="/gallery">Gallery</Link></Nav.Link>
+                <Nav.Link><Link to="/pictures">Slide Show</Link></Nav.Link>
+                <Nav.Link><Link to="/pictures/upload">Upload</Link></Nav.Link>
+                <Nav.Link><Link to="/error">Print</Link></Nav.Link>
             </>
         )
         loginActions = (
