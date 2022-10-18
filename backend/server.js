@@ -14,20 +14,16 @@ app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // serve static frontend in production mode
-// if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
 app.use(express.static(path.join(__dirname, 'public', 'build')));
-// app.use(express.static('public/build'));
-// const path = require('path');
-// app.get('/', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'public', 'build'));
-// })
+}
 
 // Root
-// app.get('/', (req, res) => {
-//     res.status(200).json({
-//         message: 'Welcome to the Oma\'s Tree backend'
-//     })
-// })
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: 'Welcome to the Oma\'s Tree backend'
+    })
+})
 
 // Controllers
 app.use(express.urlencoded({ extended: true }))
