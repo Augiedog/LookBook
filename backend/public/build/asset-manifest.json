@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc5f88e4.css",
+    "main.css": "/static/css/main.2d8d0103.css",
     "main.js": "/static/js/main.82a2164c.js",
     "static/media/bg8.jpeg": "/static/media/bg8.ed3ea3145ec16468f530.jpeg",
     "static/media/omasTreePinkLogoCropped.png": "/static/media/omasTreePinkLogoCropped.5dc63910115f4df249de.png",
     "index.html": "/index.html",
-    "main.bc5f88e4.css.map": "/static/css/main.bc5f88e4.css.map",
+    "main.2d8d0103.css.map": "/static/css/main.2d8d0103.css.map",
     "main.82a2164c.js.map": "/static/js/main.82a2164c.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc5f88e4.css",
+    "static/css/main.2d8d0103.css",
     "static/js/main.82a2164c.js"
   ]
 }

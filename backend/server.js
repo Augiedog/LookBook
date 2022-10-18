@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const serverless = require('serverless-http')
+// const serverless = require('serverless-http')
 const bodyParser = require('body-parser')
 const { Sequelize } = require('sequelize')
 const cors = require('cors')
@@ -15,8 +15,12 @@ app.use(bodyParser.json())
 
 // serve static frontend in production mode
 // if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, 'public', 'build')));
-// }
+app.use(express.static(path.join(__dirname, 'public', 'build')));
+// app.use(express.static('public/build'));
+// const path = require('path');
+// app.get('/', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'public', 'build'));
+// })
 
 // Root
 // app.get('/', (req, res) => {
