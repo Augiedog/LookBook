@@ -10,12 +10,6 @@ function NavBar() {
     const history = useNavigate()
     const { currentUser } = useContext(CurrentUser)
 
-//     <nav>
-//     <ul>
-//       <li><Link to="/login">Log In</Link></li>
-//     </ul>
-//   </nav>
-
     let logedinAction = (
         <>
             <Nav.Link><Link to="/login">Log In</Link></Nav.Link>
@@ -51,7 +45,6 @@ function NavBar() {
     return (
         <Navbar className="NavBar" sticky='top' >
             <Container>
-                {/* <Navbar.Brand href="#home" style={{ 'color': 'pink' }}>Oma's Tree</Navbar.Brand> */}
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="me-auto">

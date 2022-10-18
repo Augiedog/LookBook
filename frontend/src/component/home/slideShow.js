@@ -21,8 +21,6 @@ function SlideShow() {
     })
   }, [isLoaded])
 
-  console.log("API call for pictures", pictures)
-
   let pictureCarousel = pictures.map((picture) => {
     return (
       <Carousel.Item key={picture.fileName}>

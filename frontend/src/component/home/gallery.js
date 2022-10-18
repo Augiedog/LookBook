@@ -22,8 +22,6 @@ function Gallery() {
         })
     }, [isLoaded])
 
-    console.log("API call for pictures", pictures)
-
     let picture = pictures.map((picture) => {
         return (<Picture key={picture.fileName} picture={picture} />)
     })
