@@ -23,8 +23,8 @@ app.use('/pictures', require('./controllers/pictures'))
 app.use('/authentication', require('./middleware/auth'))
 
 // Listen for Connection
-// module.exports.handler = serverless(app)
+module.exports.handler = serverless(app)
 
-app.listen(process.env.PORT, () => {
-    console.log(`Listening on ${process.env.PORT}`)
-})
+// app.listen(process.env.PORT, () => {
+//     console.log(`Listening on ${process.env.PORT}`)
+// })
